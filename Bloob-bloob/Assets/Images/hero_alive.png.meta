@@ -54,18 +54,18 @@ TextureImporter:
         y: 0
         width: 190
         height: 192
-      alignment: 0
-      pivot: {x: .5, y: .5}
+      alignment: 5
+      pivot: {x: 1, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: hero_alive_1
       rect:
         serializedVersion: 2
         x: 193
         y: 0
-        width: 188
+        width: 187
         height: 192
-      alignment: 0
-      pivot: {x: .5, y: .5}
+      alignment: 5
+      pivot: {x: 1, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: hero_alive_2
       rect:
@@ -74,8 +74,8 @@ TextureImporter:
         y: 0
         width: 183
         height: 192
-      alignment: 0
-      pivot: {x: .5, y: .5}
+      alignment: 5
+      pivot: {x: 1, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: hero_alive_3
       rect:
