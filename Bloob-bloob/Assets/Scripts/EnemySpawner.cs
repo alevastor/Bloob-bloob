@@ -29,7 +29,7 @@ public class EnemySpawner : MonoBehaviour
         {
             Vector3 newPosition = new Vector3((Random.Range(0, 2) == 0) ? minHorizontalSpawnPosition : maxHorizontalSpawnPosition, Random.Range(minVerticalSpawnPosition, maxVerticalSpawnPosition), 0);
             Instantiate(enemyObject, newPosition, transform.rotation);
-            timeToSpawn = Random.Range(minTimeInterval, maxTimeInterval);
+            timeToSpawn = Random.Range(minTimeInterval / PlayerScript.playerSpeed, maxTimeInterval / PlayerScript.playerSpeed);
         }
         timeToSpawn -= Time.deltaTime;
 	}
