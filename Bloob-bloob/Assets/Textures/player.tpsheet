@@ -1,0 +1,18 @@
+#
+# Sprite sheet data for Unity.
+#
+# To import these sprites into your Unity project, download "TexturePackerImporter":
+# http://www.codeandweb.com/texturepacker/unity
+#
+# Sprite sheet: player.png (1128 x 396)
+# $TexturePacker:SmartUpdate:2d517031b62eeb281a2ba42d548bd43c:3d1a08b6c4a6112bed54937b2ec90a6d:0f3c3fc01f5f43cf60290b5024bbe8b7$
+#
+
+blured-player-dead-01;286;4;282;194;0.5;0.5
+blured-player-idle-01;286;200;282;194;0.5;0.5
+blured-player-idle-02;2;4;282;194;0.5;0.5
+blured-player-idle-03;2;200;282;194;0.5;0.5
+player-dead-01;848;18;276;187;0.5;0.5
+player-idle-01;570;18;276;187;0.5;0.5
+player-idle-02;848;207;276;187;0.5;0.5
+player-idle-03;570;207;276;187;0.5;0.5

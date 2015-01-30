@@ -10,14 +10,34 @@ public class EnemyScript : MonoBehaviour
     private float speed;
     private MovingScript movingScript;
     private AliveScript aliveScript;
+    private Animator animator;
 
     void Start()
     {
         aliveScript = gameObject.GetComponent<AliveScript>();
         movingScript = gameObject.GetComponent<MovingScript>();
+        animator = gameObject.GetComponent<Animator>();
 
         float modifier = (transform.position.x > 0f) ? -1 : 1;
         speed = Random.Range(minVerticalSpeed, maxVerticalSpeed) * PlayerScript.playerSpeed * modifier;
+
+        bool isBack = false;
+        isBack = (Random.Range(0, 2) == 0) ? true : false;
+        if (!isBack)
+        {
+            gameObject.GetComponent<SpriteRenderer>().sortingLayerName = "Enemies";
+            animator.SetBool("Back", false);
+        }
+        else
+        {
+            SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
+            spriteRenderer.sortingLayerName = "Enemies_Back";
+            transform.localScale = new Vector3(0.6f, 0.6f, 1f);
+            spriteRenderer.color = new Color(0.6f, 0.6f, 0.6f, 1f);
+            speed *= 0.6f;
+            animator.SetBool("Back", true);
+        }
+
         movingScript.SetVelocity(new Vector2(speed, -downSpeed));
     }
 
@@ -30,7 +50,8 @@ public class EnemyScript : MonoBehaviour
         else
         {
             // enemy not alive anymore
-            Destroy(gameObject);
+            movingScript.SetVelocity(new Vector2(0, 0));
+            Destroy(gameObject, 0.3f);
         }
     }
 }

@@ -1,15 +1,15 @@
 fileFormatVersion: 2
-guid: e32ba72e2b02511418f7f69ab247afc1
+guid: 7f42f5a9e636cdd49a00c4823879dfa1
 TextureImporter:
   fileIDToRecycleName:
-    21300000: enemy_0
-    21300002: enemy_1
-    21300004: enemy_2
-    21300006: enemy_3
-    21300008: enemy_4
-    21300010: enemy_5
-    21300012: enemy_6
-    21300014: enemy_7
+    21300000: blured-player-dead-01
+    21300002: blured-player-idle-01
+    21300004: blured-player-idle-02
+    21300006: blured-player-idle-03
+    21300008: player-dead-01
+    21300010: player-idle-01
+    21300012: player-idle-02
+    21300014: player-idle-03
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -30,10 +30,10 @@ TextureImporter:
   generateCubemap: 0
   seamlessCubemap: 0
   textureFormat: -1
-  maxTextureSize: 1024
+  maxTextureSize: 4096
   textureSettings:
     filterMode: -1
-    aniso: 16
+    aniso: -1
     mipBias: -1
     wrapMode: 1
   nPOTScale: 0
@@ -51,85 +51,85 @@ TextureImporter:
   buildTargetSettings: []
   spriteSheet:
     sprites:
-    - name: enemy_0
+    - name: blured-player-dead-01
       rect:
         serializedVersion: 2
-        x: 3
-        y: 433
-        width: 191
-        height: 73
+        x: 286
+        y: 4
+        width: 282
+        height: 194
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: enemy_1
+    - name: blured-player-idle-01
       rect:
         serializedVersion: 2
-        x: 3
-        y: 350
-        width: 189
-        height: 81
+        x: 286
+        y: 200
+        width: 282
+        height: 194
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: enemy_2
+    - name: blured-player-idle-02
       rect:
         serializedVersion: 2
         x: 2
-        y: 273
-        width: 185
-        height: 74
+        y: 4
+        width: 282
+        height: 194
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: enemy_3
+    - name: blured-player-idle-03
       rect:
         serializedVersion: 2
-        x: 3
-        y: 189
-        width: 114
-        height: 81
+        x: 2
+        y: 200
+        width: 282
+        height: 194
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: enemy_4
+    - name: player-dead-01
       rect:
         serializedVersion: 2
-        x: 121
-        y: 166
-        width: 109
-        height: 104
+        x: 848
+        y: 18
+        width: 276
+        height: 187
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: enemy_5
+    - name: player-idle-01
       rect:
         serializedVersion: 2
-        x: 4
-        y: 87
-        width: 107
-        height: 90
+        x: 570
+        y: 18
+        width: 276
+        height: 187
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: enemy_6
+    - name: player-idle-02
       rect:
         serializedVersion: 2
-        x: 115
-        y: 59
-        width: 105
-        height: 104
+        x: 848
+        y: 207
+        width: 276
+        height: 187
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: enemy_7
+    - name: player-idle-03
       rect:
         serializedVersion: 2
-        x: 3
-        y: 2
-        width: 107
-        height: 83
+        x: 570
+        y: 207
+        width: 276
+        height: 187
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 

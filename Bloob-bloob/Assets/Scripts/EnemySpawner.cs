@@ -13,11 +13,6 @@ public class EnemySpawner : MonoBehaviour
 
     private float timeToSpawn = 2f;
 
-    void Start()
-    {
-
-    }
-
     void Update()
     {
         if (Input.GetKeyUp(KeyCode.Space))
