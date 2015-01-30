@@ -1,38 +1,40 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class PlayerScript : MonoBehaviour 
+public class PlayerScript : MonoBehaviour
 {
     public static float playerSpeed = 1f;
 
     private AliveScript aliveScript;
+    private Animator animator;
 
-	void Start () 
+    void Start()
     {
         aliveScript = gameObject.GetComponent<AliveScript>();
-	}
-	
-	void Update () 
+        animator = gameObject.GetComponent<Animator>();
+    }
+
+    void Update()
     {
         playerSpeed += 0.01f * Time.deltaTime;
 
-        if(aliveScript.isAlive())
+        if (aliveScript.IsAlive())
         {
             // hero still alive
         }
         else
         {
-            Debug.Log("hero is now dead");
-            // hero not alive anymore
+            animator.SetBool("Alive", aliveScript.isAlive);
+            Destroy(gameObject, 2.5f);
         }
-	}
+    }
 
     void OnCollisionEnter2D(Collision2D coll)
     {
-        if (coll.gameObject.name == "Enemy1(Clone)")
+        if (coll.gameObject.tag == "Enemy")
         {
-            coll.gameObject.GetComponent<AliveScript>().gotDamage();
-            aliveScript.gotDamage();
+            coll.gameObject.GetComponent<AliveScript>().GotDamage();
+            aliveScript.GotDamage();
         }
     }
 }

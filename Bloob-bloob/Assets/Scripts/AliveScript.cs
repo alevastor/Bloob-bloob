@@ -1,28 +1,28 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class AliveScript : MonoBehaviour 
+public class AliveScript : MonoBehaviour
 {
     public int lifeCount = 1;
-    public bool _isAlive = true;
-	
-    void Start () 
-    {
-        _isAlive = true;
-	}
-	
-	void Update () 
-    {
-        if(lifeCount <= 0)
-            _isAlive = false;
-	}
+    public bool isAlive = true;
 
-    public bool isAlive()
+    void Start()
     {
-        return _isAlive;
+        isAlive = true;
     }
 
-    public void gotDamage()
+    void Update()
+    {
+        if (lifeCount <= 0)
+            isAlive = false;
+    }
+
+    public bool IsAlive()
+    {
+        return isAlive;
+    }
+
+    public void GotDamage()
     {
         lifeCount--;
     }

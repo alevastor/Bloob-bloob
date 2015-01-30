@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class EnemyScript : MonoBehaviour 
+public class EnemyScript : MonoBehaviour
 {
     public float minVerticalSpeed = 1f;
     public float maxVerticalSpeed = 5f;
@@ -11,18 +11,19 @@ public class EnemyScript : MonoBehaviour
     private MovingScript movingScript;
     private AliveScript aliveScript;
 
-	void Start () 
+    void Start()
     {
-        movingScript = gameObject.GetComponent<MovingScript>();
         aliveScript = gameObject.GetComponent<AliveScript>();
+        movingScript = gameObject.GetComponent<MovingScript>();
 
         float modifier = (transform.position.x > 0f) ? -1 : 1;
         speed = Random.Range(minVerticalSpeed, maxVerticalSpeed) * PlayerScript.playerSpeed * modifier;
-	}
-	
-	void Update () 
+        movingScript.SetVelocity(new Vector2(speed, -downSpeed));
+    }
+
+    void Update()
     {
-        if (aliveScript.isAlive())
+        if (aliveScript.IsAlive())
         {
             // enemy still alive
         }
@@ -31,6 +32,5 @@ public class EnemyScript : MonoBehaviour
             // enemy not alive anymore
             Destroy(gameObject);
         }
-        movingScript.Move(new Vector2(speed,-downSpeed));
-	}
+    }
 }

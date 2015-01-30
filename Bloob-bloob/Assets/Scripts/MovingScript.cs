@@ -1,10 +1,17 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class MovingScript : MonoBehaviour 
+public class MovingScript : MonoBehaviour
 {
-    public void Move(Vector2 velocity)
+    public Vector2 Velocity;
+
+    public void SetVelocity(Vector2 velocity)
     {
-        transform.Translate(Vector3.right * Time.deltaTime * velocity.x + Vector3.up * Time.deltaTime * velocity.y, Space.World);
+        Velocity = velocity;
+    }
+
+    void Update()
+    {
+        transform.Translate(Vector3.right * Time.deltaTime * Velocity.x + Vector3.up * Time.deltaTime * Velocity.y, Space.World);
     }
 }

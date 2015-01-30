@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class EnemySpawner : MonoBehaviour 
+public class EnemySpawner : MonoBehaviour
 {
     public GameObject enemyObject;
     public float minTimeInterval = 0.5f;
@@ -13,14 +13,14 @@ public class EnemySpawner : MonoBehaviour
 
     private float timeToSpawn = 2f;
 
-	void Start () 
+    void Start()
     {
-	    
-	}
-	
-	void Update () 
+
+    }
+
+    void Update()
     {
-	    if(Input.GetKeyUp(KeyCode.Space))
+        if (Input.GetKeyUp(KeyCode.Space))
         {
             Vector3 newPosition = new Vector3((Random.Range(0, 2) == 0) ? minHorizontalSpawnPosition : maxHorizontalSpawnPosition, Random.Range(minVerticalSpawnPosition, maxVerticalSpawnPosition), 0);
             Instantiate(enemyObject, newPosition, transform.rotation);
@@ -32,5 +32,5 @@ public class EnemySpawner : MonoBehaviour
             timeToSpawn = Random.Range(minTimeInterval / PlayerScript.playerSpeed, maxTimeInterval / PlayerScript.playerSpeed);
         }
         timeToSpawn -= Time.deltaTime;
-	}
+    }
 }
