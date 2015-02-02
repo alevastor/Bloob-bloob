@@ -4,22 +4,13 @@ using System.Collections;
 public class AliveScript : MonoBehaviour
 {
     public int lifeCount = 1;
-    public bool isAlive = true;
-
-    void Start()
-    {
-        isAlive = true;
-    }
-
-    void Update()
-    {
-        if (lifeCount <= 0)
-            isAlive = false;
-    }
 
     public bool IsAlive()
     {
-        return isAlive;
+        if (lifeCount <= 0)
+            return false;
+        else
+            return true;
     }
 
     public void GotDamage()
