@@ -56,7 +56,6 @@ public class EnemyScript : MonoBehaviour
             if (!particlesCreated)
             {
                 Instantiate(particlesOnDestroy, transform.position, transform.rotation);
-                Debug.Log("testing");
                 particlesCreated = true;
             }
             Destroy(gameObject, 0.3f);

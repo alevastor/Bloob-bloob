@@ -24,7 +24,7 @@ public class PlayerParticles : MonoBehaviour
 
     void LateUpdate()
     {
-        transform.position = iniPos;
+        if (!GameObject.FindGameObjectWithTag("Player").GetComponent<AliveScript>().IsAlive()) transform.position = iniPos;
         transform.rotation = iniRot;
     }
 }
