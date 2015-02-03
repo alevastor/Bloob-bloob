@@ -52,6 +52,8 @@
      <Compile Include="Assets\Scripts\EnemyScript.cs" />
      <Compile Include="Assets\Scripts\EnemySpawner.cs" />
      <Compile Include="Assets\Scripts\MovingScript.cs" />
+     <Compile Include="Assets\Scripts\ParticleSortLayerScript.cs" />
+     <Compile Include="Assets\Scripts\PlayerParticles.cs" />
      <Compile Include="Assets\Scripts\PlayerScript.cs" />
      <None Include="Assets\NewComputeShader.compute" />
      <None Include="Assets\codeandweb.com\Readme.txt" />

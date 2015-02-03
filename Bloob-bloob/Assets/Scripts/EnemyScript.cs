@@ -6,11 +6,13 @@ public class EnemyScript : MonoBehaviour
     public float minVerticalSpeed = 1f;
     public float maxVerticalSpeed = 5f;
     public float downSpeed = 1f;
+    public GameObject particlesOnDestroy;
 
     private float speed;
     private MovingScript movingScript;
     private AliveScript aliveScript;
     private Animator animator;
+    private bool particlesCreated = false;
 
     void Start()
     {
@@ -51,6 +53,12 @@ public class EnemyScript : MonoBehaviour
         {
             // enemy not alive anymore
             movingScript.SetVelocity(new Vector2(0, 0));
+            if (!particlesCreated)
+            {
+                Instantiate(particlesOnDestroy, transform.position, transform.rotation);
+                Debug.Log("testing");
+                particlesCreated = true;
+            }
             Destroy(gameObject, 0.3f);
         }
     }
