@@ -51,8 +51,10 @@
      <Compile Include="Assets\Scripts\DestroyScript.cs" />
      <Compile Include="Assets\Scripts\EnemyScript.cs" />
      <Compile Include="Assets\Scripts\EnemySpawner.cs" />
+     <Compile Include="Assets\Scripts\GameManagerScript.cs" />
      <Compile Include="Assets\Scripts\MovingScript.cs" />
      <Compile Include="Assets\Scripts\ParticleSortLayerScript.cs" />
+     <Compile Include="Assets\Scripts\ParticlesAutoDestroy.cs" />
      <Compile Include="Assets\Scripts\PlayerParticles.cs" />
      <Compile Include="Assets\Scripts\PlayerScript.cs" />
      <None Include="Assets\NewComputeShader.compute" />

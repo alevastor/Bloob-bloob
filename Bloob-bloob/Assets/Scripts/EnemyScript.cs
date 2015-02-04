@@ -22,6 +22,12 @@ public class EnemyScript : MonoBehaviour
 
         float modifier = (transform.position.x > 0f) ? -1 : 1;
         speed = Random.Range(minVerticalSpeed, maxVerticalSpeed) * PlayerScript.playerSpeed * modifier;
+        if (modifier == 1)
+        {
+            Quaternion rot = transform.rotation;
+            rot.y = 180f;
+            transform.rotation = rot;
+        }
 
         bool isBack = false;
         isBack = (Random.Range(0, 2) == 0) ? true : false;
@@ -36,11 +42,11 @@ public class EnemyScript : MonoBehaviour
             spriteRenderer.sortingLayerName = "Enemies_Back";
             transform.localScale = new Vector3(0.6f, 0.6f, 1f);
             spriteRenderer.color = new Color(0.6f, 0.6f, 0.6f, 1f);
-            speed *= 0.6f;
+            //speed *= 0.6f;
             animator.SetBool("Back", true);
         }
 
-        movingScript.SetVelocity(new Vector2(speed, -downSpeed));
+        movingScript.SetVelocity(new Vector2(speed, -downSpeed * PlayerScript.playerSpeed));
     }
 
     void Update()

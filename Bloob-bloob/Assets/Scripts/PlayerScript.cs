@@ -20,17 +20,21 @@ public class PlayerScript : MonoBehaviour
 
     void Update()
     {
-        //playerSpeed += 0.01f * Time.deltaTime;
+        playerSpeed += 0.01f * Time.deltaTime;
+        //Debug.Log(playerSpeed);
 
         if (!aliveScript.IsAlive())
         {
             animator.SetBool("Alive", aliveScript.IsAlive());
+            GameObject gameManager;
+            gameManager = GameObject.Find("GameManager");
+            gameManager.GetComponent<GameManagerScript>().StartRestarting(5f);
             Destroy(gameObject, 3.5f);
         }
-        checkLayer();
+        CheckLayer();
     }
 
-    void checkLayer()
+    void CheckLayer()
     {
         if (Input.GetMouseButtonUp(0))
         {
@@ -64,20 +68,20 @@ public class PlayerScript : MonoBehaviour
                 }
                 animator.SetBool("Hited", true);
                 coll.gameObject.GetComponent<Animator>().SetBool("Hited", true);
-                StartCoroutine("stopHitingAnimation");
+                StartCoroutine("StopHitingAnimation");
             }
         }
     }
 
-    public IEnumerator stopHitingAnimation()
+    public IEnumerator StopHitingAnimation()
     {
         yield return new WaitForSeconds(0.75f);
-        stopHitingAnimationFunc();
+        StopHitingAnimationFunc();
     }
 
-    void stopHitingAnimationFunc()
+    void StopHitingAnimationFunc()
     {
         animator.SetBool("Hited", false);
-        StopCoroutine("stopHitingAnimation");
+        StopCoroutine("StopHitingAnimation");
     }
 }
