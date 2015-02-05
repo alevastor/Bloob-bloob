@@ -23,7 +23,7 @@ public class PlayerScript : MonoBehaviour
     void Update()
     {
         playerSpeed += 0.01f * Time.deltaTime;
-        Debug.Log(playerSpeed);
+        //Debug.Log(playerSpeed);
 
         if (!aliveScript.IsAlive())
         {
