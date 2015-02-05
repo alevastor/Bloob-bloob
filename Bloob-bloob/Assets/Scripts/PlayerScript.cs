@@ -28,7 +28,9 @@ public class PlayerScript : MonoBehaviour
             animator.SetBool("Alive", aliveScript.IsAlive());
             GameObject gameManager;
             gameManager = GameObject.Find("GameManager");
-            gameManager.GetComponent<GameManagerScript>().StartRestarting(5f);
+            gameManager.GetComponent<GameManagerScript>().StartRestarting(3f);
+            GameObject.Find("EnemySpawner").GetComponent<EnemySpawner>().StopSpawn();
+            GameObject.Find("EnemySpawnerSharks").GetComponent<EnemySpawner>().StopSpawn();
             Destroy(gameObject, 3.5f);
         }
         CheckLayer();

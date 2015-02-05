@@ -55,7 +55,7 @@ TextureImporter:
         width: 227
         height: 230
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: bubble_1
       rect:
@@ -65,7 +65,7 @@ TextureImporter:
         width: 227
         height: 230
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: bubble_2
       rect:
@@ -75,17 +75,17 @@ TextureImporter:
         width: 227
         height: 230
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: bubble_3
       rect:
         serializedVersion: 2
-        x: 681
-        y: 0
-        width: 227
-        height: 230
+        x: 723
+        y: 36
+        width: 150
+        height: 152
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 

@@ -15,11 +15,6 @@ public class EnemySpawner : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyUp(KeyCode.Space))
-        {
-            Vector3 newPosition = new Vector3((Random.Range(0, 2) == 0) ? minHorizontalSpawnPosition : maxHorizontalSpawnPosition, Random.Range(minVerticalSpawnPosition, maxVerticalSpawnPosition), 0);
-            Instantiate(enemyObject, newPosition, transform.rotation);
-        }
         if (timeToSpawn <= 0)
         {
             Vector3 newPosition = new Vector3((Random.Range(0, 2) == 0) ? minHorizontalSpawnPosition : maxHorizontalSpawnPosition, Random.Range(minVerticalSpawnPosition, maxVerticalSpawnPosition), 0);
@@ -27,5 +22,10 @@ public class EnemySpawner : MonoBehaviour
             timeToSpawn = Random.Range(minTimeInterval / PlayerScript.playerSpeed, maxTimeInterval / PlayerScript.playerSpeed);
         }
         timeToSpawn -= Time.deltaTime;
+    }
+
+    public void StopSpawn()
+    {
+        timeToSpawn = 999;
     }
 }
