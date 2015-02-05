@@ -11,7 +11,7 @@ public class EnemySpawner : MonoBehaviour
     public float minVerticalSpawnPosition = -4f;
     public float maxVerticalSpawnPosition = 6f;
 
-    private float timeToSpawn = 2f;
+    private float timeToSpawn = 3f;
 
     void Update()
     {

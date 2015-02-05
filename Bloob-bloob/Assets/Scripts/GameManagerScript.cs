@@ -4,15 +4,6 @@ using System.Collections;
 public class GameManagerScript : MonoBehaviour
 {
     public GameObject player;
-    void Start()
-    {
-
-    }
-
-    void Update()
-    {
-
-    }
 
     public void StartRestarting(float secondsToRestart)
     {
@@ -27,7 +18,7 @@ public class GameManagerScript : MonoBehaviour
 
     public void RestartGameFunc()
     {
-        Application.LoadLevel(0); 
+        Application.LoadLevel("MainMenu"); 
         StopCoroutine("RestartGame");
     }
 }
