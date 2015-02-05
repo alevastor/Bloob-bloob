@@ -3,6 +3,7 @@ using System.Collections;
 
 public class PlayerScript : MonoBehaviour
 {
+    public float startPlayerSpeed = 1f;
     public static float playerSpeed = 1f;
 
     private AliveScript aliveScript;
@@ -14,6 +15,7 @@ public class PlayerScript : MonoBehaviour
         aliveScript = gameObject.GetComponent<AliveScript>();
         animator = gameObject.GetComponent<Animator>();
         spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
+        if (playerSpeed != startPlayerSpeed) playerSpeed = startPlayerSpeed;
 
         spriteRenderer.color = new Color(0.6f, 0.6f, 0.6f, 1f);
     }
@@ -21,7 +23,7 @@ public class PlayerScript : MonoBehaviour
     void Update()
     {
         playerSpeed += 0.01f * Time.deltaTime;
-        //Debug.Log(playerSpeed);
+        Debug.Log(playerSpeed);
 
         if (!aliveScript.IsAlive())
         {
