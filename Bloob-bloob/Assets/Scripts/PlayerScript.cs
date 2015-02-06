@@ -9,9 +9,11 @@ public class PlayerScript : MonoBehaviour
     private AliveScript aliveScript;
     private Animator animator;
     private SpriteRenderer spriteRenderer;
+    private AudioSource[] aSources;
 
     void Start()
     {
+        aSources = gameObject.GetComponents<AudioSource>();
         aliveScript = gameObject.GetComponent<AliveScript>();
         animator = gameObject.GetComponent<Animator>();
         spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
@@ -33,6 +35,7 @@ public class PlayerScript : MonoBehaviour
             gameManager.GetComponent<GameManagerScript>().StartRestarting(3f);
             GameObject.Find("EnemySpawner").GetComponent<EnemySpawner>().StopSpawn();
             GameObject.Find("EnemySpawnerSharks").GetComponent<EnemySpawner>().StopSpawn();
+            aSources[0].Stop();
             Destroy(gameObject, 3.5f);
         }
         CheckLayer();
@@ -54,9 +57,15 @@ public class PlayerScript : MonoBehaviour
             }
         }
         if (spriteRenderer.sortingLayerName == "Player_Back" && transform.localScale.x > 0.6f)
+        {
             transform.localScale = new Vector3(transform.localScale.x - 0.01f, transform.localScale.y - 0.01f, 1f);
+            if (aSources[0].pitch > 0.5f) aSources[0].pitch -= 0.01f;
+        }
         else if (spriteRenderer.sortingLayerName == "Player" && transform.localScale.x < 1.0f)
+        {
             transform.localScale = new Vector3(transform.localScale.x + 0.01f, transform.localScale.y + 0.01f, 1f);
+            if (aSources[0].pitch < 0.9f) aSources[0].pitch += 0.01f;
+        }
     }
 
     void OnCollisionEnter2D(Collision2D coll)
@@ -72,6 +81,8 @@ public class PlayerScript : MonoBehaviour
                 }
                 animator.SetBool("Hited", true);
                 coll.gameObject.GetComponent<Animator>().SetBool("Hited", true);
+                aSources[1].pitch = Random.Range(0.4f, 0.8f);
+                aSources[1].Play();
                 StartCoroutine("StopHitingAnimation");
             }
         }

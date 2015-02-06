@@ -30,10 +30,14 @@ public class ButtonScript : MonoBehaviour
         {
             child.SetBool("OnExit", true);
         }
+        audio.pitch = Random.Range(0.8f, 1.2f);
+        audio.Play();
     }
 
     public void StartAnimationForSettingsButtons()
     {
         gameObject.GetComponent<Animator>().SetBool("Pressed", true);
+        audio.pitch = Random.Range(0.8f, 1.2f);
+        audio.Play();
     }
 }
