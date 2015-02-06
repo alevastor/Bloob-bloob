@@ -4,6 +4,7 @@ using System.Collections;
 public class EnemySpawner : MonoBehaviour
 {
     public GameObject enemyObject;
+    public float timeToFirstSpawn = 3f;
     public float minTimeInterval = 0.5f;
     public float maxTimeInterval = 3f;
     public float minHorizontalSpawnPosition = -4.5f;
@@ -11,7 +12,16 @@ public class EnemySpawner : MonoBehaviour
     public float minVerticalSpawnPosition = -4f;
     public float maxVerticalSpawnPosition = 6f;
 
-    private float timeToSpawn = 3f;
+    private float timeToSpawn;
+
+    void Start()
+    {
+        timeToSpawn = Random.Range(minTimeInterval, maxTimeInterval);
+        if(timeToSpawn < timeToFirstSpawn)
+        {
+            timeToSpawn = timeToFirstSpawn;
+        }
+    }
 
     void Update()
     {

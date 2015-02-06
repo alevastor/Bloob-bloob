@@ -10,6 +10,11 @@ public class MovingScript : MonoBehaviour
         Velocity = velocity;
     }
 
+    public Vector2 GetVelocity()
+    {
+        return Velocity;
+    }
+
     void Update()
     {
         transform.Translate(Vector3.right * Time.deltaTime * Velocity.x + Vector3.up * Time.deltaTime * Velocity.y, Space.World);

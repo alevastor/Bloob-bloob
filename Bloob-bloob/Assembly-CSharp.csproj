@@ -46,6 +46,7 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\AccelerationInput.cs" />
      <Compile Include="Assets\Scripts\AliveScript.cs" />
      <Compile Include="Assets\Scripts\BGScroller.cs" />
      <Compile Include="Assets\Scripts\ButtonScript.cs" />
@@ -59,8 +60,10 @@
      <Compile Include="Assets\Scripts\MovingScript.cs" />
      <Compile Include="Assets\Scripts\ParticleSortLayerScript.cs" />
      <Compile Include="Assets\Scripts\ParticlesAutoDestroy.cs" />
+     <Compile Include="Assets\Scripts\PiranhaScript.cs" />
      <Compile Include="Assets\Scripts\PlayerParticles.cs" />
      <Compile Include="Assets\Scripts\PlayerScript.cs" />
+     <Compile Include="Assets\Scripts\ScoreScript.cs" />
      <Compile Include="Assets\Scripts\StartScript.cs" />
      <None Include="Assets\NewComputeShader.compute" />
      <None Include="Assets\codeandweb.com\Readme.txt" />
