@@ -5,21 +5,26 @@ public class AccelerationInput : MonoBehaviour
 {
     float myXaccel = 0.0f;
     float smoothSpeed = 3.0f;
+    public float xBoost = 100f;
+    public float yBoost = 30f;
+
+    Vector3 pos;
+    Vector3 acceler;
+    float startYPosition;
 
     void Start()
     {
-
+        startYPosition = transform.position.y;
     }
 
     void Update()
     {
-        Vector3 acceler = Input.acceleration;
-        Vector3 pos = transform.position;
+        acceler = Input.acceleration;
+        pos = transform.position;
         acceler.Normalize();
         myXaccel = Mathf.Lerp(myXaccel, acceler.x, smoothSpeed * Time.deltaTime);
-        pos.x = -myXaccel * 100f;
-        pos.y = Mathf.Abs(myXaccel) * 30f;
-        Debug.Log(myXaccel);
+        pos.x = -myXaccel * xBoost;
+        pos.y = startYPosition + Mathf.Abs(myXaccel) * yBoost;
         transform.position = pos;
     }
 }
