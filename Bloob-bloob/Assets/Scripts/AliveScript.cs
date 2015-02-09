@@ -17,4 +17,9 @@ public class AliveScript : MonoBehaviour
     {
         lifeCount--;
     }
+
+    public int GetLifeCount()
+    {
+        return lifeCount;
+    }
 }
