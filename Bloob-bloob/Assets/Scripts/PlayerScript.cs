@@ -29,8 +29,8 @@ public class PlayerScript : MonoBehaviour
     void Update()
     {
         playerSpeed += 0.01f * Time.deltaTime;
-        //Debug.Log(playerSpeed);
-
+        Time.timeScale += 0.0002f;
+        Debug.Log(Time.timeScale);
 
         if (!aliveScript.IsAlive())
         {
@@ -48,9 +48,9 @@ public class PlayerScript : MonoBehaviour
 
     void DrawLives(bool destroyAll = false)
     {
-        if (aliveScript.GetLifeCount() == 0 || destroyAll)
+        if (destroyAll)
             foreach (GameObject go in lifeIcons)
-                go.transform.position = new Vector3(10, 10, 0);
+                Destroy(go);
         else
             for (float i = 0; i < aliveScript.GetLifeCount(); i++)
                 Instantiate(livesObject, new Vector3(-2f, 5f - 1f * i, 0), transform.rotation);
