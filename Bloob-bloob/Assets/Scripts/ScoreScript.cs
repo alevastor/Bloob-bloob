@@ -30,7 +30,7 @@ public class ScoreScript : MonoBehaviour
         }
         else
         {
-            if(currentScore > highScore)
+            if (currentScore > highScore)
             {
                 highScore = currentScore;
                 PlayerPrefs.SetFloat("High Score", highScore);

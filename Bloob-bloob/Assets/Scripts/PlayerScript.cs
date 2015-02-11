@@ -29,8 +29,6 @@ public class PlayerScript : MonoBehaviour
     void Update()
     {
         playerSpeed += 0.01f * Time.deltaTime;
-        Time.timeScale += 0.0002f;
-        Debug.Log(Time.timeScale);
 
         if (!aliveScript.IsAlive())
         {
@@ -100,6 +98,16 @@ public class PlayerScript : MonoBehaviour
                 aSources[1].pitch = Random.Range(0.4f, 0.8f);
                 aSources[1].Play();
                 StartCoroutine("StopHitingAnimation");
+            }
+        }
+        if (coll.gameObject.tag == "LifeBonus" && aliveScript.IsAlive())
+        {
+            if ((coll.gameObject.GetComponent<SpriteRenderer>().sortingLayerName == "Enemies_Back" && spriteRenderer.sortingLayerName == "Player_Back") || (coll.gameObject.GetComponent<SpriteRenderer>().sortingLayerName == "Enemies" && spriteRenderer.sortingLayerName == "Player"))
+            {
+                aliveScript.GotLife();
+                for (int i = 0; i < aliveScript.GetLifeCount(); i++)
+                    lifeIcons[i].transform.position = new Vector3(-2f, 5f - 1f * (float)i, 0);
+                Destroy(coll.gameObject);
             }
         }
     }

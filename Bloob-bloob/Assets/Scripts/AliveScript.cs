@@ -4,6 +4,7 @@ using System.Collections;
 public class AliveScript : MonoBehaviour
 {
     public int lifeCount = 1;
+    public int maxLife = 1;
 
     public bool IsAlive()
     {
@@ -21,5 +22,13 @@ public class AliveScript : MonoBehaviour
     public int GetLifeCount()
     {
         return lifeCount;
+    }
+
+    public void GotLife()
+    {
+        if (GetLifeCount() < maxLife)
+        {
+            lifeCount++;
+        }
     }
 }

@@ -57,6 +57,7 @@
     <Compile Include="Assets\Scripts\AccelerationInput.cs" />
     <Compile Include="Assets\Scripts\AliveScript.cs" />
     <Compile Include="Assets\Scripts\BGScroller.cs" />
+    <Compile Include="Assets\Scripts\BonusScript.cs" />
     <Compile Include="Assets\Scripts\ButtonScript.cs" />
     <Compile Include="Assets\Scripts\ChildImageScript.cs" />
     <Compile Include="Assets\Scripts\DestroyScript.cs" />

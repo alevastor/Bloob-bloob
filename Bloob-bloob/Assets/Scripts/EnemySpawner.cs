@@ -17,7 +17,7 @@ public class EnemySpawner : MonoBehaviour
     void Start()
     {
         timeToSpawn = Random.Range(minTimeInterval, maxTimeInterval);
-        if(timeToSpawn < timeToFirstSpawn)
+        if (timeToSpawn < timeToFirstSpawn)
         {
             timeToSpawn = timeToFirstSpawn;
         }
