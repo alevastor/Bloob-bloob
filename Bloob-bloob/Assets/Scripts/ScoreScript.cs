@@ -11,6 +11,7 @@ public class ScoreScript : MonoBehaviour
     private float highScore;
     private Text text;
     private Text highScoreText;
+    private GoogleAnalyticsV3 googleAnalytics;
 
     void Start()
     {
@@ -18,6 +19,7 @@ public class ScoreScript : MonoBehaviour
         text = textObject.GetComponent<Text>();
         highScore = PlayerPrefs.GetFloat("High Score", 0);
         highScoreText = highScoreTextObject.GetComponent<Text>();
+        googleAnalytics = GameObject.FindGameObjectWithTag("GoogleAnalyticsObject").GetComponent<GoogleAnalyticsV3>();
     }
 
     void Update()
@@ -30,6 +32,7 @@ public class ScoreScript : MonoBehaviour
         }
         else
         {
+            if(currentScore > 0f) googleAnalytics.LogEvent(new EventHitBuilder().SetEventCategory("Level End").SetEventAction("Player Score").SetEventLabel(currentScore.ToString()));
             if (currentScore > highScore)
             {
                 highScore = currentScore;
