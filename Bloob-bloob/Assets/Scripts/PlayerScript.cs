@@ -54,8 +54,8 @@ public class PlayerScript : MonoBehaviour
             {
                 Vector3 newPosition = transform.position;
                 Camera camera = Camera.main;
-                newPosition.x = -camera.aspect * camera.orthographicSize + 1.5f;
-                newPosition.y = 5f - 0.8f * i;
+                newPosition.x = -camera.aspect * camera.orthographicSize + 0.5f;
+                newPosition.y = 6f - 0.8f * i;
                 Instantiate(livesObject, new Vector3(newPosition.x, newPosition.y, 0), transform.rotation);
             }
     }
@@ -112,7 +112,13 @@ public class PlayerScript : MonoBehaviour
             {
                 aliveScript.GotLife();
                 for (int i = 0; i < aliveScript.GetLifeCount(); i++)
-                    lifeIcons[i].transform.position = new Vector3(-2f, 5f - 1f * (float)i, 0);
+                {
+                    Vector3 newPosition = transform.position;
+                    Camera camera = Camera.main;
+                    newPosition.x = -camera.aspect * camera.orthographicSize + 0.5f;
+                    newPosition.y = 6f - 0.8f * (float)i;
+                    lifeIcons[i].transform.position = new Vector3(newPosition.x, newPosition.y, 0);
+                }
                 Destroy(coll.gameObject);
             }
         }

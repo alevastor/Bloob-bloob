@@ -6,19 +6,9 @@ public class ButtonScript : MonoBehaviour
     public GameObject elementToActivate;
     public GameObject elementToHide;
 
-    void Start()
-    {
-
-    }
-
-    void Update()
-    {
-
-    }
-
     public void EnableElements()
     {
-        Instantiate(elementToActivate, new Vector3(0, 0, 0), new Quaternion(0, 0, 0, 0));
+        Instantiate(elementToActivate);
         Destroy(GameObject.Find(elementToHide.name));
     }
 
