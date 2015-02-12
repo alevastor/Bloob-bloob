@@ -51,7 +51,13 @@ public class PlayerScript : MonoBehaviour
                 Destroy(go);
         else
             for (float i = 0; i < aliveScript.GetLifeCount(); i++)
-                Instantiate(livesObject, new Vector3(-2f, 5f - 1f * i, 0), transform.rotation);
+            {
+                Vector3 newPosition = transform.position;
+                Camera camera = Camera.main;
+                newPosition.x = -camera.aspect * camera.orthographicSize + 1.5f;
+                newPosition.y = 5f - 0.8f * i;
+                Instantiate(livesObject, new Vector3(newPosition.x, newPosition.y, 0), transform.rotation);
+            }
     }
 
     void CheckLayer()
