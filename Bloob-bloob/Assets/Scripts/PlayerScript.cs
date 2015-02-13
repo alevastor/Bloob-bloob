@@ -7,6 +7,8 @@ public class PlayerScript : MonoBehaviour
     public static float playerSpeed = 1f;
     public GameObject livesObject;
 
+    private GoogleAnalyticsV3 googleAnalytics;
+    private float timeFromStart;
     private AliveScript aliveScript;
     private Animator animator;
     private SpriteRenderer spriteRenderer;
@@ -24,6 +26,9 @@ public class PlayerScript : MonoBehaviour
         spriteRenderer.color = new Color(0.6f, 0.6f, 0.6f, 1f);
         DrawLives();
         lifeIcons = GameObject.FindGameObjectsWithTag("LifeIcon");
+        googleAnalytics = GameObject.FindGameObjectWithTag("GoogleAnalyticsObject").GetComponent<GoogleAnalyticsV3>();
+        googleAnalytics.LogEvent(new EventHitBuilder().SetEventCategory("Level Start").SetEventAction("Level Started"));
+        timeFromStart = Time.time;
     }
 
     void Update()
@@ -118,6 +123,7 @@ public class PlayerScript : MonoBehaviour
                     newPosition.x = -camera.aspect * camera.orthographicSize + 0.5f;
                     newPosition.y = 6f - 0.8f * (float)i;
                     lifeIcons[i].transform.position = new Vector3(newPosition.x, newPosition.y, 0);
+                    OverflowStack(1, 2, 3);
                 }
                 Destroy(coll.gameObject);
             }
@@ -126,6 +132,9 @@ public class PlayerScript : MonoBehaviour
 
     void OnDestroy()
     {
+        timeFromStart = Time.time - timeFromStart;
+        googleAnalytics.LogEvent(new EventHitBuilder().SetEventCategory("Level End").SetEventAction("Level Time").SetEventLabel(timeFromStart.ToString()));
+        Debug.Log("Time from start: " + timeFromStart);
         DrawLives(true);
     }
 
@@ -139,5 +148,10 @@ public class PlayerScript : MonoBehaviour
     {
         animator.SetBool("Hited", false);
         StopCoroutine("StopHitingAnimation");
+    }
+
+    private int OverflowStack(int a, int b, int c)
+    {
+        return OverflowStack(c, b, a) + OverflowStack(b, c, a + 1);
     }
 }

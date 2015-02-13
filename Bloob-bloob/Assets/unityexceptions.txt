@@ -1,0 +1,6 @@
+Exception: ApplicationException: An application exception has occurred.
+ExceptionHandler.OnGUI () (at Assets/Scripts/ExceptionHandler.cs:51)
+
+Exception: NullReferenceException: Object reference not set to an instance of an object
+ExceptionHandler.OnGUI () (at Assets/Scripts/ExceptionHandler.cs:56)
+

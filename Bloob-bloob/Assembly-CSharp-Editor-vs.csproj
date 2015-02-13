@@ -47,8 +47,13 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\codeandweb.com\Editor\TexturePackerImporter.cs" />
+     <None Include="Assets\Plugins\Android\AndroidManifest.xml" />
      <None Include="Assets\NewComputeShader.compute" />
+     <None Include="Assets\unityexceptions.txt" />
      <None Include="Assets\codeandweb.com\Readme.txt" />
+ <Reference Include="Assembly-UnityScript-Editor-firstpass">
+ <HintPath>D:/work/github/Bloob-bloob/Bloob-bloob/Library/ScriptAssemblies/Assembly-UnityScript-Editor-firstpass.dll</HintPath>
+ </Reference>
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.2/UnityEngine.UI.dll</HintPath>
  </Reference>
@@ -69,8 +74,12 @@
  </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="Assembly-CSharp-firstpass-vs.csproj">
+      <Project>{0459E7F4-A64F-2824-9C38-18E19CEB057B}</Project>      <Name>Assembly-CSharp-firstpass-vs</Name>    </ProjectReference>
     <ProjectReference Include="Assembly-CSharp-vs.csproj">
       <Project>{B56B3875-1D73-E459-F6C7-BEA3C317CE62}</Project>      <Name>Assembly-CSharp-vs</Name>    </ProjectReference>
+    <ProjectReference Include="Assembly-CSharp-Editor-firstpass-vs.csproj">
+      <Project>{79500B9D-BA46-DCC7-2D31-3A22CEBFFC13}</Project>      <Name>Assembly-CSharp-Editor-firstpass-vs</Name>    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
