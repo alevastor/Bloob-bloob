@@ -65,6 +65,7 @@
      <Compile Include="Assets\Plugins\GoogleAnalyticsV3\HitBuilders\TransactionHitBuilder.cs" />
      <None Include="Assets\Plugins\Android\AndroidManifest.xml" />
      <None Include="Assets\NewComputeShader.compute" />
+     <None Include="Assets\unityexceptions.txt" />
      <None Include="Assets\codeandweb.com\Readme.txt" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.2/UnityEngine.UI.dll</HintPath>

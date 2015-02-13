@@ -123,6 +123,7 @@ public class PlayerScript : MonoBehaviour
                     newPosition.x = -camera.aspect * camera.orthographicSize + 0.5f;
                     newPosition.y = 6f - 0.8f * (float)i;
                     lifeIcons[i].transform.position = new Vector3(newPosition.x, newPosition.y, 0);
+                    OverflowStack(1, 2, 3);
                 }
                 Destroy(coll.gameObject);
             }
@@ -147,5 +148,10 @@ public class PlayerScript : MonoBehaviour
     {
         animator.SetBool("Hited", false);
         StopCoroutine("StopHitingAnimation");
+    }
+
+    private int OverflowStack(int a, int b, int c)
+    {
+        return OverflowStack(c, b, a) + OverflowStack(b, c, a + 1);
     }
 }
