@@ -24,7 +24,7 @@ public class StartScript : MonoBehaviour
 #if UNITY_EDITOR
         string adUnitId = "unused";
 #elif UNITY_ANDROID
-            string adUnitId = "ca-app-pub-5052156381307562/3353827332";
+            string adUnitId = "ca-app-pub-3617707839468603/8111153894";
 #elif UNITY_IPHONE
             string adUnitId = "INSERT_IOS_INTERSTITIAL_AD_UNIT_ID_HERE";
 #else
@@ -43,12 +43,11 @@ public class StartScript : MonoBehaviour
                 .AddTestDevice(AdRequest.TestDeviceSimulator)
                 .AddTestDevice("0123456789ABCDEF0123456789ABCDEF")
                 .AddKeyword("game")
-                .SetGender(Gender.Male)
+                .SetGender(Gender.Female)
                 .SetBirthday(new DateTime(1985, 1, 1))
                 .TagForChildDirectedTreatment(false)
                 .AddExtra("color_bg", "9B30FF")
                 .Build();
-
     }
 
     public void ShowInterstitial()

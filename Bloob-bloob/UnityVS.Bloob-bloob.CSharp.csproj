@@ -104,6 +104,7 @@
     <Compile Include="Assets\Scripts\ScreenRelativePosition.cs" />
     <Compile Include="Assets\Scripts\SendScreenAnalytics.cs" />
     <Compile Include="Assets\Scripts\SoundControl.cs" />
+    <Compile Include="Assets\Scripts\SpeederScript.cs" />
     <Compile Include="Assets\Scripts\StartScript.cs" />
   </ItemGroup>
   <ItemGroup>

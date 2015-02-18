@@ -90,6 +90,7 @@
      <Compile Include="Assets\Scripts\ScreenRelativePosition.cs" />
      <Compile Include="Assets\Scripts\SendScreenAnalytics.cs" />
      <Compile Include="Assets\Scripts\SoundControl.cs" />
+     <Compile Include="Assets\Scripts\SpeederScript.cs" />
      <Compile Include="Assets\Scripts\StartScript.cs" />
      <None Include="Assets\Plugins\Android\google-play-services_lib\res\values-pt\common_strings.xml" />
      <None Include="Assets\Plugins\Android\unityads\proguard-project.txt" />

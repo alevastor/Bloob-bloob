@@ -2,6 +2,7 @@
 using System.Collections;
 using UnityEngine.Advertisements;
 using GoogleMobileAds.Api;
+using UnityEngine.EventSystems;
 
 public class PlayerScript : MonoBehaviour
 {
@@ -16,6 +17,8 @@ public class PlayerScript : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     private AudioSource[] aSources;
     GameObject[] lifeIcons;
+    private float playerSpeedSaver;
+    private bool isSpeedingUp = false;
 
     void Start()
     {
@@ -35,7 +38,14 @@ public class PlayerScript : MonoBehaviour
 
     void Update()
     {
-        playerSpeed += 0.01f * Time.deltaTime;
+        playerSpeed += 0.03f * Time.deltaTime;
+        if (isSpeedingUp)
+            Time.timeScale += 0.8f * Time.deltaTime;
+        else
+            if (Time.timeScale > 1f)
+                Time.timeScale -= 0.8f * Time.deltaTime;
+        if (Time.timeScale < 1f) Time.timeScale = 1f;
+        Debug.Log(Time.timeScale);
 
         if (!aliveScript.IsAlive())
         {
@@ -69,17 +79,20 @@ public class PlayerScript : MonoBehaviour
 
     void CheckLayer()
     {
-        if (Input.GetMouseButtonUp(0))
+        if (!EventSystem.current.IsPointerOverGameObject())
         {
-            if (spriteRenderer.sortingLayerName == "Player_Back")
+            if (Input.GetMouseButtonUp(0))
             {
-                spriteRenderer.sortingLayerName = "Player";
-                animator.SetBool("Back", false);
-            }
-            else
-            {
-                spriteRenderer.sortingLayerName = "Player_Back";
-                animator.SetBool("Back", true);
+                if (spriteRenderer.sortingLayerName == "Player_Back")
+                {
+                    spriteRenderer.sortingLayerName = "Player";
+                    animator.SetBool("Back", false);
+                }
+                else
+                {
+                    spriteRenderer.sortingLayerName = "Player_Back";
+                    animator.SetBool("Back", true);
+                }
             }
         }
         if (spriteRenderer.sortingLayerName == "Player_Back" && transform.localScale.x > 0.6f)
@@ -102,7 +115,7 @@ public class PlayerScript : MonoBehaviour
             {
                 if (coll.gameObject.GetComponent<AliveScript>().IsAlive() && animator.GetBool("Hited") == false)
                 {
-                    aliveScript.GotDamage();
+                    //aliveScript.GotDamage();
                     coll.gameObject.GetComponent<AliveScript>().GotDamage();
                     lifeIcons[aliveScript.GetLifeCount()].transform.position = new Vector3(10, 10, 0);
                 }
@@ -129,10 +142,20 @@ public class PlayerScript : MonoBehaviour
                 Destroy(coll.gameObject);
             }
         }
+        if (coll.gameObject.tag == "SpeedBonus" && aliveScript.IsAlive())
+        {
+            if ((coll.gameObject.GetComponent<SpriteRenderer>().sortingLayerName == "Enemies_Back" && spriteRenderer.sortingLayerName == "Player_Back") || (coll.gameObject.GetComponent<SpriteRenderer>().sortingLayerName == "Enemies" && spriteRenderer.sortingLayerName == "Player"))
+            {
+                SpeedUp();
+                StartCoroutine("SlowDown");
+                Destroy(coll.gameObject);
+            }
+        }
     }
 
     void OnDestroy()
     {
+        Time.timeScale = 1;
         timeFromStart = Time.time - timeFromStart;
         googleAnalytics.LogEvent(new EventHitBuilder().SetEventCategory("Level End").SetEventAction("Level Time").SetEventLabel(timeFromStart.ToString()));
         Debug.Log("Time from start: " + timeFromStart);
@@ -161,5 +184,22 @@ public class PlayerScript : MonoBehaviour
     {
         animator.SetBool("Hited", false);
         StopCoroutine("StopHitingAnimation");
+    }
+
+    void SpeedUp()
+    {
+        isSpeedingUp = true;
+    }
+
+    public IEnumerator SlowDown()
+    {
+        yield return new WaitForSeconds(2f);
+        SlowDownFunc();
+    }
+
+    void SlowDownFunc()
+    {
+        isSpeedingUp = false;
+        StopCoroutine("SlowDown");
     }
 }

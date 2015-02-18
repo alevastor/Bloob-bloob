@@ -17,6 +17,9 @@ public class MovingScript : MonoBehaviour
 
     void Update()
     {
-        transform.Translate(Vector3.right * Time.deltaTime * Velocity.x + Vector3.up * Time.deltaTime * Velocity.y, Space.World);
+        if(Velocity.y < 0) 
+            transform.Translate(Vector3.right * Time.deltaTime * Velocity.x / Time.timeScale + Vector3.up * Time.deltaTime * Velocity.y * Time.timeScale, Space.World);
+        else
+            transform.Translate(Vector3.right * Time.deltaTime * Velocity.x / Time.timeScale + Vector3.up * Time.deltaTime * Velocity.y / Time.timeScale, Space.World);
     }
 }

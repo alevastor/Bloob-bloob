@@ -24,15 +24,18 @@ public class ScoreScript : MonoBehaviour
 
     void Update()
     {
-        if (GameObject.Find("Player") != null)
+        if (GameObject.FindGameObjectWithTag("Player") != null)
         {
-            currentScore += PlayerScript.playerSpeed / 10f;
-            text.text = ((int)(currentScore)).ToString();
-            highScoreText.text = "";
+            if (GameObject.FindGameObjectWithTag("Player").GetComponent<AliveScript>().IsAlive())
+            {
+                currentScore += PlayerScript.playerSpeed * Time.timeScale / 10f;
+                text.text = ((int)(currentScore)).ToString();
+                highScoreText.text = "";
+            }
         }
         else
         {
-            if(currentScore > 0f) googleAnalytics.LogEvent(new EventHitBuilder().SetEventCategory("Level End").SetEventAction("Player Score").SetEventLabel(currentScore.ToString()));
+            if (currentScore > 0f) googleAnalytics.LogEvent(new EventHitBuilder().SetEventCategory("Level End").SetEventAction("Player Score").SetEventLabel(currentScore.ToString()));
             if (currentScore > highScore)
             {
                 highScore = currentScore;
