@@ -39,6 +39,6 @@ public class SoundControl : MonoBehaviour
 
     void Update()
     {
-        CheckSoundState();
+        //CheckSoundState();
     }
 }

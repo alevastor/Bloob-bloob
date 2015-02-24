@@ -90,6 +90,7 @@
      <None Include="Assets\Plugins\Android\google-play-services_lib\res\values-nb\common_strings.xml" />
      <None Include="Assets\Plugins\Android\google-play-services_lib\res\values-zh-rHK\common_strings.xml" />
      <None Include="Assets\Plugins\Android\google-play-services_lib\res\values-ky-rKG\common_strings.xml" />
+     <None Include="Assets\Editor\template-AndroidManifest.txt" />
      <None Include="Assets\Plugins\Android\google-play-services_lib\res\values-en-rIN\common_strings.xml" />
      <None Include="Assets\Plugins\Android\google-play-services_lib\res\values-sw\common_strings.xml" />
      <None Include="Assets\Plugins\Android\google-play-services_lib\res\values-hy-rAM\common_strings.xml" />
@@ -105,6 +106,7 @@
      <None Include="Assets\Plugins\Android\google-play-services_lib\res\values-th\common_strings.xml" />
      <None Include="Assets\Plugins\Android\google-play-services_lib\res\values-sv\common_strings.xml" />
      <None Include="Assets\Plugins\Android\google-play-services_lib\res\values-ru\common_strings.xml" />
+     <None Include="Assets\Plugins\Android\MainLibProj\AndroidManifest.xml" />
      <None Include="Assets\Plugins\Android\google-play-services_lib\res\values-tl\common_strings.xml" />
      <None Include="Assets\link.xml" />
      <None Include="Assets\Plugins\Android\google-play-services_lib\res\values-ca\common_strings.xml" />
@@ -143,6 +145,7 @@
      <None Include="Assets\Plugins\Android\google-play-services_lib\res\values-en-rGB\common_strings.xml" />
      <None Include="Assets\Plugins\Android\google-play-services_lib\res\values-es\common_strings.xml" />
      <None Include="Assets\Plugins\Android\google-play-services_lib\res\values-mk-rMK\common_strings.xml" />
+     <None Include="Assets\Editor\projsettings.txt" />
      <None Include="Assets\Plugins\Android\google-play-services_lib\README.txt" />
      <None Include="Assets\Plugins\Android\google-play-services_lib\res\values-fa\common_strings.xml" />
      <None Include="Assets\Plugins\Android\google-play-services_lib\res\values-bg\common_strings.xml" />

@@ -11,5 +11,6 @@ public class SendScreenAnalytics : MonoBehaviour
         string screenName = gameObject.name;
         if(screenName.IndexOf("(Clone)") > 0 ) screenName = screenName.Substring(0, screenName.IndexOf("(Clone)"));
         googleAnalytics.LogScreen(new AppViewHitBuilder().SetScreenName(screenName));
+        GameObject.Find("GM").GetComponent<SoundControl>().CheckSoundState();
     }
 }

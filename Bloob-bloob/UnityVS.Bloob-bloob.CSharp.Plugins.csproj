@@ -116,6 +116,8 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\codeandweb.com\Readme.txt" />
+    <None Include="Assets\Editor\projsettings.txt" />
+    <None Include="Assets\Editor\template-AndroidManifest.txt" />
     <None Include="Assets\link.xml" />
     <None Include="Assets\Plugins\Android\AndroidManifest.xml" />
     <None Include="Assets\Plugins\Android\google-play-services_lib\AndroidManifest.xml" />
@@ -215,6 +217,7 @@
     <None Include="Assets\Plugins\Android\google-play-services_lib\res\values-zh-rHK\common_strings.xml" />
     <None Include="Assets\Plugins\Android\google-play-services_lib\res\values-zh-rTW\common_strings.xml" />
     <None Include="Assets\Plugins\Android\google-play-services_lib\res\values-zu\common_strings.xml" />
+    <None Include="Assets\Plugins\Android\MainLibProj\AndroidManifest.xml" />
     <None Include="Assets\Plugins\Android\unityads\AndroidManifest.xml" />
     <None Include="Assets\Plugins\Android\unityads\build.xml" />
     <None Include="Assets\Plugins\Android\unityads\proguard-project.txt" />

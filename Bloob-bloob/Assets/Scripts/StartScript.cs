@@ -4,19 +4,34 @@ using System.Collections;
 using UnityEngine.Advertisements;
 using GoogleMobileAds;
 using GoogleMobileAds.Api;
+using GooglePlayGames;
+using UnityEngine.SocialPlatforms;
 
 public class StartScript : MonoBehaviour
 {
     public GoogleAnalyticsV3 googleAnalytics;
     public GameObject startObject;
+    public GameObject imagesObject;
     private InterstitialAd interstitial;
 
     void Start()
     {
         googleAnalytics.StartSession();
         Advertisement.Initialize("131625974");
-        Instantiate(startObject);
+        //PlayerPrefs.SetInt("FirstStart", 1);
+        if (PlayerPrefs.GetInt("FirstStart", 0) == 0) // change default to 1 to work
+        {
+            Instantiate(startObject);
+            if (PlayerPrefs.GetInt("Music") == 1) GameObject.Find("GM").audio.Play();
+        }
+        else
+            Instantiate(imagesObject);
         RequestInterstitial();
+        PlayGamesPlatform.Activate();
+        Social.localUser.Authenticate((bool success) =>
+        {
+
+        });
     }
 
     public void RequestInterstitial()

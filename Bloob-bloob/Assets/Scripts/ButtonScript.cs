@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
+using GooglePlayGames;
+using UnityEngine.SocialPlatforms;
 
 public class ButtonScript : MonoBehaviour
 {
@@ -41,6 +43,7 @@ public class ButtonScript : MonoBehaviour
     {
         Instantiate(elementToActivate);
         Destroy(GameObject.Find(elementToHide.name));
+        GameObject.Find("GM").GetComponent<SoundControl>().CheckSoundState();
     }
 
     public void StartAnimationForSceneButtons()
@@ -93,5 +96,15 @@ public class ButtonScript : MonoBehaviour
         }
         gameObject.GetComponent<Animator>().SetBool("Pressed", false);
         GameObject.Find("GM").GetComponent<SoundControl>().CheckSoundState();
+    }
+
+    public void OpenLeaderboard()
+    {
+        PlayGamesPlatform.Instance.ShowLeaderboardUI("CgkIsa-15KkVEAIQAQ");
+    }
+
+    public void OpenAchievements()
+    {
+        Social.ShowAchievementsUI();
     }
 }

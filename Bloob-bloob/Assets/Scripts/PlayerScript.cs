@@ -115,7 +115,7 @@ public class PlayerScript : MonoBehaviour
             {
                 if (coll.gameObject.GetComponent<AliveScript>().IsAlive() && animator.GetBool("Hited") == false)
                 {
-                    //aliveScript.GotDamage();
+                    aliveScript.GotDamage();
                     coll.gameObject.GetComponent<AliveScript>().GotDamage();
                     lifeIcons[aliveScript.GetLifeCount()].transform.position = new Vector3(10, 10, 0);
                 }

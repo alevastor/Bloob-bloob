@@ -86,10 +86,22 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Editor\GPGSAndroidSetupUI.cs" />
+    <Compile Include="Assets\Editor\GPGSDocsUI.cs" />
+    <Compile Include="Assets\Editor\GPGSIOSSetupUI.cs" />
+    <Compile Include="Assets\Editor\GPGSInstructionWindow.cs" />
+    <Compile Include="Assets\Editor\GPGSPostBuild.cs" />
+    <Compile Include="Assets\Editor\GPGSProjectSettings.cs" />
+    <Compile Include="Assets\Editor\GPGSStrings.cs" />
+    <Compile Include="Assets\Editor\GPGSUpgrader.cs" />
+    <Compile Include="Assets\Editor\GPGSUtil.cs" />
+    <Compile Include="Assets\Editor\PlistBuddyHelper.cs" />
     <Compile Include="Assets\codeandweb.com\Editor\TexturePackerImporter.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\codeandweb.com\Readme.txt" />
+    <None Include="Assets\Editor\projsettings.txt" />
+    <None Include="Assets\Editor\template-AndroidManifest.txt" />
     <None Include="Assets\link.xml" />
     <None Include="Assets\Plugins\Android\AndroidManifest.xml" />
     <None Include="Assets\Plugins\Android\google-play-services_lib\AndroidManifest.xml" />
@@ -189,6 +201,7 @@
     <None Include="Assets\Plugins\Android\google-play-services_lib\res\values-zh-rHK\common_strings.xml" />
     <None Include="Assets\Plugins\Android\google-play-services_lib\res\values-zh-rTW\common_strings.xml" />
     <None Include="Assets\Plugins\Android\google-play-services_lib\res\values-zu\common_strings.xml" />
+    <None Include="Assets\Plugins\Android\MainLibProj\AndroidManifest.xml" />
     <None Include="Assets\Plugins\Android\unityads\AndroidManifest.xml" />
     <None Include="Assets\Plugins\Android\unityads\build.xml" />
     <None Include="Assets\Plugins\Android\unityads\proguard-project.txt" />
