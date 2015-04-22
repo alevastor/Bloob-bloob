@@ -5,7 +5,7 @@ public class ParticlesAutoDestroy : MonoBehaviour
 {
     void Update()
     {
-        if (gameObject.particleSystem.isStopped)
+        if (gameObject.GetComponent<ParticleSystem>().isStopped)
         {
             Destroy(gameObject);
         }

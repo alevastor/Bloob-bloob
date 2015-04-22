@@ -16,7 +16,7 @@ public class PlayerParticles : MonoBehaviour
     {
         if (!GameObject.FindGameObjectWithTag("Player").GetComponent<AliveScript>().IsAlive())
         {
-            gameObject.particleSystem.Stop();
+            gameObject.GetComponent<ParticleSystem>().Stop();
         }
 
         transform.localScale = GameObject.FindGameObjectWithTag("Player").gameObject.transform.localScale;

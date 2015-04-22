@@ -5,6 +5,6 @@ public class ParticleSortLayerScript : MonoBehaviour
 {
     void Start()
     {
-        particleSystem.renderer.sortingLayerName = "Effects";
+        GetComponent<ParticleSystem>().GetComponent<Renderer>().sortingLayerName = "Effects";
     }
 }

@@ -22,7 +22,7 @@ public class StartScript : MonoBehaviour
         if (PlayerPrefs.GetInt("FirstStart", 0) == 0) // change default to 1 to work
         {
             Instantiate(startObject);
-            if (PlayerPrefs.GetInt("Music") == 1) GameObject.Find("GM").audio.Play();
+            if (PlayerPrefs.GetInt("Music") == 1) GameObject.Find("GM").GetComponent<AudioSource>().Play();
         }
         else
             Instantiate(imagesObject);

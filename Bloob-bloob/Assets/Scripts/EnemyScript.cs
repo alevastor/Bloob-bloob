@@ -6,6 +6,7 @@ public class EnemyScript : MonoBehaviour
     public float minVerticalSpeed = 1f;
     public float maxVerticalSpeed = 5f;
     public float downSpeed = 1f;
+    public float scaleOnBack = 0.6f; 
     public GameObject particlesOnDestroy;
 
     private float speed;
@@ -40,7 +41,8 @@ public class EnemyScript : MonoBehaviour
         {
             SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
             spriteRenderer.sortingLayerName = "Enemies_Back";
-            transform.localScale = new Vector3(0.6f, 0.6f, 1f);
+            float currentScale = transform.localScale.x;
+            transform.localScale = new Vector3(currentScale * scaleOnBack, currentScale * scaleOnBack, 1f);
             spriteRenderer.color = new Color(0.6f, 0.6f, 0.6f, 1f);
             //speed *= 0.6f;
             animator.SetBool("Back", true);

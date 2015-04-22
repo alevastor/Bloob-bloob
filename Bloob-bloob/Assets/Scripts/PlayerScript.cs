@@ -27,6 +27,7 @@ public class PlayerScript : MonoBehaviour
         animator = gameObject.GetComponent<Animator>();
         spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
         if (playerSpeed != startPlayerSpeed) playerSpeed = startPlayerSpeed;
+        transform.position = new Vector3(-100, -100, -100); //to prevent flickering
 
         spriteRenderer.color = new Color(0.6f, 0.6f, 0.6f, 1f);
         DrawLives();
@@ -45,7 +46,6 @@ public class PlayerScript : MonoBehaviour
             if (Time.timeScale > 1f)
                 Time.timeScale -= 0.8f * Time.deltaTime;
         if (Time.timeScale < 1f) Time.timeScale = 1f;
-        Debug.Log(Time.timeScale);
 
         if (!aliveScript.IsAlive())
         {

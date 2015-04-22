@@ -10,6 +10,7 @@ public class ButtonScript : MonoBehaviour
 
     void Start()
     {
+        transform.position = new Vector3(-100, -100, -100);
         CheckState();
     }
 
@@ -54,15 +55,15 @@ public class ButtonScript : MonoBehaviour
         {
             child.SetBool("OnExit", true);
         }
-        audio.pitch = Random.Range(0.8f, 1.2f);
-        audio.Play();
+        GetComponent<AudioSource>().pitch = Random.Range(0.8f, 1.2f);
+        GetComponent<AudioSource>().Play();
     }
 
     public void StartAnimationForSettingsButtons()
     {
         gameObject.GetComponent<Animator>().SetBool("Pressed", true);
-        audio.pitch = Random.Range(0.8f, 1.2f);
-        audio.Play();
+        GetComponent<AudioSource>().pitch = Random.Range(0.8f, 1.2f);
+        GetComponent<AudioSource>().Play();
         CheckState();
     }
 

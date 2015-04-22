@@ -1,0 +1,3 @@
+lastUpgrade=00915
+proj.AppId=732770949041
+android.SetupDone=true

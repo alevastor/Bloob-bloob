@@ -56,7 +56,7 @@ public class SlideShow : MonoBehaviour
             {
                 Instantiate(mainMenu);
             }
-            if (PlayerPrefs.GetInt("Music") == 1) GameObject.Find("GM").audio.Play();
+            if (PlayerPrefs.GetInt("Music") == 1) GameObject.Find("GM").GetComponent<AudioSource>().Play();
             Destroy(gameObject);
         }
         else
